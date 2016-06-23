@@ -6,7 +6,6 @@
     "modernizr": "~2.8.1",
     "jquery-smooth-scroll": "^1.7.2",
     "bootswatch": "^3.3.6+2",
-    "scrollup": "^2.4.1",
     "Chart.js": "^2.1.6"
   },
   "overrides": {
