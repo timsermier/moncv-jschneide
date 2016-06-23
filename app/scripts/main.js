@@ -2,13 +2,13 @@ $( document ).ready(function() {
 
     $('a').smoothScroll();
 
-    $(".progress").each(function(){
+    $('.progress').each(function(){
 
-       var size = $(this).find(".progress-bar").attr("aria-valuenow");
+       var size = $(this).find('.progress-bar').attr('aria-valuenow');
 
        var blank = 100 - size;
 
-       var myCanvas = $("<canvas height='120px'></canvas>");
+       var myCanvas = $('<canvas height=\'120px\'></canvas>');
 
        var data = {
           labels: [
@@ -17,22 +17,22 @@ $( document ).ready(function() {
             {
                 data: [blank, size],
                 backgroundColor: [
-                    "#FFFFFF",
-                    "#36A2EB"
+                    '#FFFFFF',
+                    '#36A2EB'
                     
                 ],
                 borderColor: [
-                    "#FFFFFF",
-                    "#36A2EB"
+                    '#FFFFFF',
+                    '#36A2EB'
                 ],
                 hoverBackgroundColor: [
-                    "#FFFFFF",
-                    "#033c73"
+                    '#FFFFFF',
+                    '#033c73'
                     
                 ],
                 hoverBorderColor: [
-                    "#FFFFFF",
-                    "#033c73"
+                    '#FFFFFF',
+                    '#033c73'
                 ]
             }]
     };
