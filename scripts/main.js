@@ -1,1 +1,1 @@
-"use strict";$("a").smoothScroll(),console.log("'Allo 'Allo!");
+"use strict";$(document).ready(function(){$("a").smoothScroll(),$(".progress").each(function(){var o=$(this).find(".progress-bar").attr("aria-valuenow"),a=100-o,r=$("<canvas height='120px'></canvas>"),F={labels:[],datasets:[{data:[a,o],backgroundColor:["#FFFFFF","#36A2EB"],borderColor:["#FFFFFF","#36A2EB"],hoverBackgroundColor:["#FFFFFF","#033c73"],hoverBorderColor:["#FFFFFF","#033c73"]}]};$(this).replaceWith(r);new Chart(r,{type:"doughnut",data:F,options:{tooltips:{enabled:!1}}})})});
