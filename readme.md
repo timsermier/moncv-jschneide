@@ -1,175 +1,192 @@
 # Mon CV - Jerome Schneider
+---------------------------
 
-Explication du développement de ma page de Curriculum Vitae et de l'utilistation de git et github.
+EExplication du développement de ma page de Curriculum Vitae et de l'utilistation de git et github.
 
   - Utilisation de BootStrap et Bootswatch pour la mise en page
-  - Installation d'une libraire pour le défilement (jquery.smooth-scroll.js)
   - Yeoman (Yo, Bower, Gulp)
   - Node.js
   - npm
+  - Installation d'une libraire pour le défilement (jquery.smooth-scroll.js)
   - Utilisation de Git pour le service de versionning
   - GitHub
   - Déploier les données d'un répertoire contenant dans le résultat de la compilation du code html
-  
 
+## Yoeman
+---------
+Yoeman est une plateforme qui permet de récupérer des templates qui ont été créés pour nous. Cela nous permet d'être plus rapidement productif et d'utiliser les "best practice" en vigueur. 
+
+Il se compose de trois outils nous permettant de récupérer et déploier facilement ces templates:
+ - **Yo** nous permet de récupérer les projets et de les déploier dans un répertoire
+ - **Gulp** nous permet de construire, de prévisualiser et de tester notre application
+ - **npm** nous permet de récupérer différents plugins sur le net et de les installer automatiquement dans nos projets. Il est également nécessaire à l'installation de **bower** que nous utiliserons pour télécharger nos plugins.
+
+## gulp
+----
+Gulp est un task runner , c'est à dire qu'il est capable de lancer des bouts de scripts à notre place.
+
+Afin de lancer notre serveur, nous utilisons la tâche défini :
+```sh
+$ gulp serve
+```
+
+2 autres commandes sont églament utilisées avec gulp :
+```sh
+# compile et minise le code dans le répertoire build
+$ gulp build
+
+# contrôle du résultat une fois le code buildé
+$ gulp serve:dist
+
+# ajoute et commit les modifications de dist sur le serveur distant
+$ gulp deploy
+```
+
+## bower
+----
+L'avantage d'utiliser un logiciel comme **bower** c'est qu'il gère à notre place les dépendances, c'est à dire qu'il télécharge automitiquement les éléments nécessaires au bon fonctionnnement du plugin que l'on désire utilisé.
+
+Pour fonctionner, bower à besoin que l'on installe **node.js** ainsi que **git**.
+
+Afin d'installer bower sur notre poste nous utiliserons la commande suivante :
+```sh
+$ npm install -g bower
+```
+
+## node.js
+----------
+Comme expliquer dans le point précédant, node.js est nécessaire qu bon fonctionnement de **bower**. C'est pourquoi nous l'avons installer.
+
+Selon la définition de Wikipedia:
+> Node.js est une plateforme logicielle libre et événementielle en JavaScript orientée vers les applications réseau qui doivent pouvoir monter en charge. Elle utilise la machine virtuelle V8 et implémente sous licence MIT les spécifications CommonJS. Node.js contient une bibliothèque de serveur HTTP intégrée, ce qui rend possible de faire tourner un serveur web sans avoir besoin d'un logiciel externe comme Apache ou lighttpd, et permettant de mieux contrôler la façon dont le serveur web fonctionne.
+
+## Bootstrap
+------------
 Pour la mise en page plusieurs éléments ont été utilisé dans le framework bootstrap:
  - Le système de grille afin d'avoir une mise en page responsive pouvant s'afficher sur plusieurs tailles d'écran
  - Des classes de mise en page pour les différents éléments de la page html (div, img, etc.)
  - Le composant glyphicons permettant l'affichage d'images mise à disposition dans le framework
  - Le composant navbar permettant l'affichage d'un menu dans ma page
  - Le composant progress bar permettant l'affichage de bar de niveau pour évaluer les qualités
- - 
- 
 
+## Bootswatch
+-------------
 Pour modifier le thème de Bootstrap, j'ai utilisé une librairie mise à disposition par Bootswatch.
+ - Le thème choisi est cerulean
 
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
+## Installation d'un premier plugin javacript via la commande bower
+------
+Afin de tester le fonctionnement de **bower** nous avons installons un plugin qui permet de faire défiler tout en douceur nos liens vers leurs ancres.
 
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
-
-### Version
-3.2.7
-
-### Tech
-
-Dillinger uses a number of open source projects to work properly:
-
-* [AngularJS] - HTML enhanced for web apps!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [keymaster.js] - awesome keyboard handler lib by [@thomasfuchs]
-* [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
-### Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
-
-You need Gulp installed globally:
-
+Pour facilité l'installation de ce plugin, **bower** nous permet d'exécuter une commande qui le télécharge et l'installe à notre place.
 ```sh
-$ npm i -g gulp
+# installe une version d'un package et l'ajoute au fichier bower.json (option --save)
+$ bower install jquery.smooth-scroll --save
+
+# permet de désinstaller un package
+$ bower uninstall  jquery.smooth-scroll --save
 ```
 
-```sh
-$ git clone [git-repo-url] dillinger
-$ cd dillinger
-$ npm i -d
-$ NODE_ENV=production node app
-```
+## Git
+------
+Afin de pouvoir versionner nos fichiers et de les partager, nous utilisons un logiciel de versionning. Il est également nécessaire au bon fonctionnement de **bower** puisque ce manager de package est basé sur Git.
 
-### Plugins
+Git utilise une architecture de type de distribuée ce qui contient un certain nombre d'avantage :
+ - Cela réduit les risques de perte de données en cas de crash du serveur. Toutes les machines utilisant le projet git ont toutes les données du projet en local
+ - Toutes les actions sont accélérées car les données sont en local
+ - Le fait que les données soit en local permet de gagner du temps en évitant le trafic réseau et cela permet également de travaillant sans souci hors-connexion
 
-Dillinger is currently extended with the following plugins
-
-* Dropbox
-* Github
-* Google Drive
-* OneDrive
-
-Readmes, how to use them in your own application can be found here:
-
-* [plugins/dropbox/README.md] [PlDb]
-* [plugins/github/README.md] [PlGh]
-* [plugins/googledrive/README.md] [PlGd]
-* [plugins/onedrive/README.md] [PlOd]
-
-### Development
-
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantanously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-```sh
-$ node app
-```
-
-Second Tab:
-```sh
-$ gulp watch
-```
-
-(optional) Third:
-```sh
-$ karma start
-```
-
-### Docker
-Dillinger is very easy to install and deploy in a Docker container.
-
-By default, the Docker will expose port 80, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
+### Les commandes git
+---------------------
+Les différentes commandes git permettent d'intéragir avec le serveur et d'ainsi manipuler en toutes sécurité les modifications effectuées sur des fichiers.
 
 ```sh
-cd dillinger
-docker build -t <youruser>/dillinger:latest .
+# initialisation d'un répertoire git
+$ git init
 ```
-This will create the dillinger image and pull in the necessary dependencies. Once done, run the Docker and map the port to whatever you wish on your host. In this example, we simply map port 80 of the host to port 80 of the Docker (or whatever port was exposed in the Dockerfile):
+
+Cette commande crée dans un répertoire du système un nouveau dépôt Git.
+
+Si le répertoire existe déjà et que l'on désire le copier, on peut utiliser la commande :
 
 ```sh
-docker run -d -p 80:80 --restart="always" <youruser>/dillinger:latest
+$ git clone /path/to/repository
 ```
 
-Verify the deployment by navigating to your server address in your preferred browser.
+Un dépôt Git est composé de 3 éléments:
+ - Un espace de travail qui contient réellement les fichier
+ - Un index qui joue le rôle d'espace de transit pour les fichiers
+ - Un HEAD qui pointe vers la dernière validation que l'on a faite
+ 
+Afin de nous permettre d'ajouter nos changement à l'index, 1 première commande est nécessaire :
 
-### N|Solid and NGINX
+ ```sh
+ # ajout d'un fichier monfichier.txt
+$ git add monfichier.txt
+# ajout de tous les fichiers ne se trouvant pas dans l'index
+$ git add *
+```
 
-More details coming soon.
+Une fois ces fichiers ajouter à l'index, il nous faudra valider la modification via la commande :
+ ```sh
+$ git commit -m "Message de validation"
+```
 
-#### docker-compose.yml
+Le message est très important puisqu'il permet de définir quelles modifications ont été apportées au fichier. Ce message aidera à distinguer plus facilement les différentes version du fichier.
 
-Change the path for the nginx conf mounting path to your full path, not mine!
+Une fois le **commit** effectué, le fichier sera donc ajouté au HEAD.
 
-### Todos
+Afin de contrôler l'état des fichiers de notre répertoire Git, une commande existe afin de nous résumer cela :
+ ```sh
+$ git status
+```
 
- - Write Tests
- - Rethink Github Save
- - Add Code Comments
- - Add Night Mode
+Elle affiche l'état des différents fichiers. En rouge pour les fichiers à ajouter et en faire pour les fichiers à commiter.
 
-License
-----
+## GitHub
+Définition GitHub selon Wikipedia :
+> GitHub (exploité sous le nom de GitHub, Inc.) est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git. Ce site est développé en Ruby on Rails et Erlang par Chris Wanstrath, PJ Hyett et Tom Preston-Werner. GitHub propose des comptes professionnels payants, ainsi que des comptes gratuits pour les projets de logiciels libres.
 
-MIT
+Nous utilisons GitHub afin de mettre à disposition nos données. Un compte pour toute la classe a été créé ou nous déposons nos données.
 
+Une fois connecté à notre répertoire distant, il est nécessaire de déploier les modifications en local sur ce serveur. Il est également possible de récupérer les modifications réaliser par d'autres personnes travaillant sur le projet.
 
-**Free Software, Hell Yeah!**
+ ```sh
+ # envoyer des données vers le serveur distant
+$ git push origin master
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+# pour mettre à jour le dépôt local vers les dernières validations
+git pull
 
+# pour fusionner 2 branche
+git merge <branch>
+```
+Dans la mesure du possible, Git tente d'auto-fusionner les changements, mais lorsque des conflits surviennent, nous devons les régler par nous-même.
+ ```sh
+ # pour valider les changements
+$ git add <filename>
+```
 
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [@thomasfuchs]: <http://twitter.com/thomasfuchs>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [keymaster.js]: <https://github.com/madrobby/keymaster>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
+Il est certaine fois nécessaire, afin d'éviter des problèmes des modifications, de créer des nouvelles branches à partir d'un projet existant.
+ ```sh
+ # pour créer une nouvelle branche et l'utiliser
+$ git checkout -b gh-pages
 
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]:  <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
+# retour à la branche principale
+$ git checkout master
+```
+
+Il est recommandé de créer des tags pour les releases de programmes. Pour créer des tags dans git, cette commande est utilisée :
+ ```sh
+ # pour créer une nouvelle branche et l'utiliser
+$ git checkout -b gh-pages
+
+# retour à la branche principale
+$ git tag 1.0.0 1b2e1d63ff
+```
+
+## Utilisation du plugin Chart.js
+Afin de comprendre le fonctionnement du langage **javascript**, nous avons installer le plugin **Chart.js** qui permet d'afficher différents diagrammes.
+
+Nous avons utilisé le langage javascript afin de convertir nos progress bar utiliser dans bootstrap en diagramme de type Doughnut. Le code généré transforme automatiquement certaines balises et les paramètres afin d'obtenir le résultat désiré.
+
