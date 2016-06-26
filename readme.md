@@ -1,7 +1,7 @@
 # Mon CV - Jerome Schneider
 ---------------------------
 
-EExplication du développement de ma page de Curriculum Vitae et de l'utilistation de git et github.
+Explication du développement de ma page de Curriculum Vitae et de l'utilistation de git et github.
 
   - Utilisation de BootStrap et Bootswatch pour la mise en page
   - Yeoman (Yo, Bower, Gulp)
@@ -143,14 +143,6 @@ $ git status
 
 Elle affiche l'état des différents fichiers. En rouge pour les fichiers à ajouter et en faire pour les fichiers à commiter.
 
-## GitHub
-Définition GitHub selon Wikipedia :
-> GitHub (exploité sous le nom de GitHub, Inc.) est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git. Ce site est développé en Ruby on Rails et Erlang par Chris Wanstrath, PJ Hyett et Tom Preston-Werner. GitHub propose des comptes professionnels payants, ainsi que des comptes gratuits pour les projets de logiciels libres.
-
-Nous utilisons GitHub afin de mettre à disposition nos données. Un compte pour toute la classe a été créé ou nous déposons nos données.
-
-Une fois connecté à notre répertoire distant, il est nécessaire de déploier les modifications en local sur ce serveur. Il est également possible de récupérer les modifications réaliser par d'autres personnes travaillant sur le projet.
-
  ```sh
  # envoyer des données vers le serveur distant
 $ git push origin master
@@ -185,7 +177,18 @@ $ git checkout -b gh-pages
 $ git tag 1.0.0 1b2e1d63ff
 ```
 
+## GitHub
+------
+Définition GitHub selon Wikipedia :
+> GitHub (exploité sous le nom de GitHub, Inc.) est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git. Ce site est développé en Ruby on Rails et Erlang par Chris Wanstrath, PJ Hyett et Tom Preston-Werner. GitHub propose des comptes professionnels payants, ainsi que des comptes gratuits pour les projets de logiciels libres.
+
+Nous utilisons GitHub afin de mettre à disposition nos données. Un compte pour toute la classe a été créé ou nous déposons nos données.
+
+Une fois connecté à notre répertoire distant, il est nécessaire de déploier les modifications en local sur ce serveur. Il est également possible de récupérer les modifications réaliser par d'autres personnes travaillant sur le projet.
+
 ## Utilisation du plugin Chart.js
+---------
 Afin de comprendre le fonctionnement du langage **javascript**, nous avons installer le plugin **Chart.js** qui permet d'afficher différents diagrammes.
 
 Nous avons utilisé le langage javascript afin de convertir nos progress bar utiliser dans bootstrap en diagramme de type Doughnut. Le code généré transforme automatiquement certaines balises et les paramètres afin d'obtenir le résultat désiré.
+
