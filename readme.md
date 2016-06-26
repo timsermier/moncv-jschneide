@@ -189,4 +189,3 @@ $ git tag 1.0.0 1b2e1d63ff
 Afin de comprendre le fonctionnement du langage **javascript**, nous avons installer le plugin **Chart.js** qui permet d'afficher différents diagrammes.
 
 Nous avons utilisé le langage javascript afin de convertir nos progress bar utiliser dans bootstrap en diagramme de type Doughnut. Le code généré transforme automatiquement certaines balises et les paramètres afin d'obtenir le résultat désiré.
-
